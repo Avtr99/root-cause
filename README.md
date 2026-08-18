@@ -1,6 +1,5 @@
 # root-cause
 
-[![Agent Skills](https://img.shields.io/badge/agent--skills-spec-1.0-blue)](https://agentskills.io)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 > Catch and fix AI-written patchwork code before it ships, in any language or stack.
