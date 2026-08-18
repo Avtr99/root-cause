@@ -1,0 +1,55 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - '.claude-plugin/**'
+      - '.codex-plugin/**'
+      - '.agents/**'
+      - '.github/plugin/**'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install skills-ref
+        run: pip install "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
+
+      - name: Validate skill against Agent Skills spec
+        run: skills-ref validate skills/root-cause
+
+      - name: Validate adapter manifests
+        run: |
+          set -e
+          for f in \
+            .claude-plugin/marketplace.json \
+            skills/root-cause/.claude-plugin/plugin.json \
+            .codex-plugin/plugin.json \
+            .agents/plugins/marketplace.json \
+            .github/plugin/marketplace.json; do
+            echo "Checking $f"
+            python3 -c "import json; json.load(open('$f'))"
+          done
+
+      - name: Check SKILL.md size
+        run: |
+          lines=$(wc -l < skills/root-cause/SKILL.md)
+          if [ "$lines" -gt 500 ]; then
+            echo "SKILL.md is $lines lines (max 500)"
+            exit 1
+          fi
+          echo "SKILL.md: $lines lines"

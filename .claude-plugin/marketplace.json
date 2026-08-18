@@ -1,0 +1,29 @@
+{
+  "name": "avtr-root-cause",
+  "owner": {
+    "name": "Avtr99",
+    "email": "Avtr99@users.noreply.github.com",
+    "url": "https://github.com/Avtr99"
+  },
+  "plugins": [
+    {
+      "name": "root-cause",
+      "source": "./skills/root-cause",
+      "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Avtr99",
+        "url": "https://github.com/Avtr99"
+      },
+      "license": "MIT",
+      "keywords": [
+        "code-quality",
+        "refactoring",
+        "root-cause",
+        "defensive-code",
+        "simplification",
+        "agent-skills"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "avtr-root-cause",
+  "owner": {
+    "name": "Avtr99",
+    "email": "Avtr99@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Root-cause fixes over symptom patching for AI-generated code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "root-cause",
+      "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
+      "version": "1.0.0",
+      "source": "./skills/root-cause"
+    }
+  ]
+}
