@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "root-cause",
-      "source": "./skills/root-cause",
+      "source": "./",
       "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
       "version": "1.0.0",
       "author": {

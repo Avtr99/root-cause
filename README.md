@@ -98,7 +98,7 @@ It has two modes — **fix** (one bug) and **audit** (a whole codebase) — desc
 | [`skills/root-cause/SKILL.md`](./skills/root-cause/SKILL.md) | The skill — the prompt that the agent reads |
 | [`skills/root-cause/README.md`](./skills/root-cause/README.md) | Human-facing docs for the skill |
 | [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json) | Claude Code plugin marketplace manifest |
-| [`skills/root-cause/.claude-plugin/plugin.json`](./skills/root-cause/.claude-plugin/plugin.json) | Claude Code plugin manifest (inside the skill dir) |
+| [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json) | Claude Code plugin manifest |
 | [`.codex-plugin/plugin.json`](./.codex-plugin/plugin.json) | Codex / ChatGPT plugin manifest |
 | [`.agents/plugins/marketplace.json`](./.agents/plugins/marketplace.json) | Codex / ChatGPT plugin marketplace manifest |
 | [`.github/plugin/marketplace.json`](./.github/plugin/marketplace.json) | GitHub Copilot CLI plugin marketplace manifest |

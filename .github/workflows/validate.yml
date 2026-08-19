@@ -38,7 +38,7 @@ jobs:
           set -e
           for f in \
             .claude-plugin/marketplace.json \
-            skills/root-cause/.claude-plugin/plugin.json \
+            .claude-plugin/plugin.json \
             .codex-plugin/plugin.json \
             .agents/plugins/marketplace.json \
             .github/plugin/marketplace.json; do
