@@ -12,6 +12,7 @@
 | **GitHub Copilot CLI** | `.github/plugin/marketplace.json` | `copilot plugin marketplace add Avtr99/root-cause`, then `copilot plugin install root-cause@avtr-root-cause`. |
 | **Cursor** | `.cursor-plugin/plugin.json` | `cursor plugin install Avtr99/root-cause`, or search "root-cause" in the plugin marketplace. |
 | **Devin** | `plugin.json` (root), `.devin-plugin/plugin.json` | `devin plugins install Avtr99/root-cause`. The root `plugin.json` is the canonical manifest; `.devin-plugin/plugin.json` mirrors it for Devin's native discovery. |
+| **Grok Build** | `.grok-plugin/plugin.json`, `.grok-plugin/marketplace.json` | `grok plugin marketplace add Avtr99/root-cause`, then `grok plugin install root-cause@avtr-root-cause`. Or install directly: `grok plugin install Avtr99/root-cause`. |
 | **Generic agents** (OpenCode, Cline, Qoder, Codewhale…) | `skills/*/SKILL.md` | Read `skills/` natively. `npx skills add` copies `SKILL.md` into the agent's native skills dir. |
 
 ## Principles
@@ -27,6 +28,7 @@ Each host uses a different plugin-root convention. This is by design — each ho
 - **Claude Code**: The marketplace `source` points at `./` (the repo root). The plugin manifest lives at `.claude-plugin/plugin.json`. Claude Code treats the repo root as the plugin root and discovers `skills/root-cause/SKILL.md` via the `skills/` directory convention.
 - **Cursor**: The plugin manifest at `.cursor-plugin/plugin.json` points at `./skills/`. Cursor reads the `skills/` directory and discovers `root-cause/SKILL.md`.
 - **Devin**: The root `plugin.json` is the canonical manifest. `.devin-plugin/plugin.json` mirrors it for Devin's native plugin discovery. Both point at `./skills/`.
+- **Grok Build**: The plugin manifest at `.grok-plugin/plugin.json` points at `./skills/`. The marketplace manifest at `.grok-plugin/marketplace.json` uses a `{ "source": "url", "url": ... }` source pointing at the Git repo, per the Grok marketplace format.
 - **GitHub Copilot**: The marketplace `source` points at `./skills/root-cause`. Copilot reads `SKILL.md` directly — no plugin manifest needed.
 - **Codex / ChatGPT**: The marketplace `source` is `{ "source": "local", "path": "./" }` (the repo root, `./`-prefixed per Codex docs). The plugin manifest lives at `.codex-plugin/plugin.json` and points at the skills directory via `"skills": "./skills/"` — Codex scans that directory for skill subdirectories and finds `root-cause/SKILL.md`. This is the [official Codex marketplace format](https://developers.openai.com/codex/plugins/build/plugins) — the `{ "source": "local", "path": ... }` object form is required by Codex, and the plugin root is the repo root because Codex expects skills in subdirectories of the plugin root.
 

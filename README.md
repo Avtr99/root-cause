@@ -90,6 +90,15 @@ devin plugins install Avtr99/root-cause
 
 Verify with `devin plugins list`. Plugins load at session start, so start a new Devin session after installing.
 
+### Grok Build CLI
+
+```bash
+grok plugin marketplace add Avtr99/root-cause
+grok plugin install root-cause@avtr-root-cause
+```
+
+Or install directly: `grok plugin install Avtr99/root-cause`.
+
 ### Manual
 
 Copy [`skills/root-cause/`](./skills/root-cause/) into the skills directory of your agent:
@@ -127,12 +136,14 @@ It has two modes — **fix** (one bug) and **audit** (a whole codebase) — desc
 | [`.github/plugin/marketplace.json`](./.github/plugin/marketplace.json) | GitHub Copilot CLI plugin marketplace manifest |
 | [`.cursor-plugin/plugin.json`](./.cursor-plugin/plugin.json) | Cursor plugin manifest |
 | [`.devin-plugin/plugin.json`](./.devin-plugin/plugin.json) | Devin plugin manifest |
+| [`.grok-plugin/plugin.json`](./.grok-plugin/plugin.json) | Grok Build plugin manifest |
+| [`.grok-plugin/marketplace.json`](./.grok-plugin/marketplace.json) | Grok Build plugin marketplace manifest |
 | [`docs/agent-portability.md`](./docs/agent-portability.md) | Which adapter each host uses |
 | [`docs/benchmark.md`](./docs/benchmark.md) | Evaluation methodology and results |
 
 ## Compatibility
 
-`root-cause` is a pure-prompt skill. It has no scripts, no network calls, and no dependencies. It works in any agent that reads the `SKILL.md` format. The adapter manifests in this repo (`.claude-plugin/`, `.codex-plugin/`, `.github/plugin/`) add native install support on top.
+`root-cause` is a pure-prompt skill. It has no scripts, no network calls, and no dependencies. It works in any agent that reads the `SKILL.md` format. The adapter manifests in this repo (`.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.devin-plugin/`, `.grok-plugin/`, `.github/plugin/`) add native install support on top.
 
 ## License
 

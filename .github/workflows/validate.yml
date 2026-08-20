@@ -10,6 +10,7 @@ on:
       - '.codex-plugin/**'
       - '.cursor-plugin/**'
       - '.devin-plugin/**'
+      - '.grok-plugin/**'
       - '.agents/**'
       - '.github/plugin/**'
       - 'plugin.json'
@@ -46,6 +47,8 @@ jobs:
             .codex-plugin/plugin.json \
             .cursor-plugin/plugin.json \
             .devin-plugin/plugin.json \
+            .grok-plugin/plugin.json \
+            .grok-plugin/marketplace.json \
             .agents/plugins/marketplace.json \
             .github/plugin/marketplace.json; do
             echo "Checking $f"
