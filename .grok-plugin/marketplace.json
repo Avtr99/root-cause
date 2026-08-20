@@ -1,20 +1,25 @@
 {
-  "name": "avtr-root-cause",
-  "description": "Root Cause plugin for Grok Build",
+  "name": "avtr-antidote",
+  "description": "Antidote plugin for Grok Build",
   "owner": {
     "name": "Avtr99"
   },
   "plugins": [
     {
-      "name": "root-cause",
-      "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
+      "name": "antidote",
+      "description": "Stop AI agents from patching symptoms. Forces structural root-cause fixes over symptom patching in any language or stack.",
       "category": "development",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/Avtr99/root-cause.git"
+      "version": "1.1.0",
+      "author": {
+        "name": "Avtr99"
       },
-      "repository": "https://github.com/Avtr99/root-cause",
+      "source": {
+        "type": "local",
+        "path": "./"
+      },
+      "homepage": "https://github.com/Avtr99/antidote",
       "keywords": [
+        "antidote",
         "root-cause",
         "code-quality",
         "refactoring",

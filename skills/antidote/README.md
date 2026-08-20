@@ -1,6 +1,6 @@
-# root-cause
+# antidote
 
-Catch and fix AI-written patchwork code before it ships, in any language or stack.
+Stop AI agents from patching symptoms. Fix the root cause instead of masking the problem.
 
 ## The one-line rule
 

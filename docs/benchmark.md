@@ -2,7 +2,7 @@
 
 ## How the skill was tested
 
-The `root-cause` skill was evaluated with the [skill-eval-harness](https://github.com/adewale/skill-eval-harness), an open-source CLI that measures how much an Agent Skill improves model output. The harness runs the same case, model, and repetition with and without the skill, then reports the difference in pass rate.
+The `antidote` skill was evaluated with the [skill-eval-harness](https://github.com/adewale/skill-eval-harness), an open-source CLI that measures how much an Agent Skill improves model output. The harness runs the same case, model, and repetition with and without the skill, then reports the difference in pass rate.
 
 ### Test cases
 

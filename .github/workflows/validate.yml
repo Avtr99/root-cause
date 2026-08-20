@@ -35,7 +35,7 @@ jobs:
         run: pip install "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
 
       - name: Validate skill against Agent Skills spec
-        run: skills-ref validate skills/root-cause
+        run: skills-ref validate skills/antidote
 
       - name: Validate adapter manifests
         run: |
@@ -50,14 +50,21 @@ jobs:
             .grok-plugin/plugin.json \
             .grok-plugin/marketplace.json \
             .agents/plugins/marketplace.json \
-            .github/plugin/marketplace.json; do
+            .github/plugin/marketplace.json \
+            .github/plugin/antidote/plugin.json; do
             echo "Checking $f"
             python3 -c "import json; json.load(open('$f'))"
           done
 
+      - name: Check Copilot skill synchronization
+        run: cmp --silent skills/antidote/SKILL.md .github/plugin/antidote/skills/antidote/SKILL.md
+
+      - name: Validate Copilot skill against Agent Skills spec
+        run: skills-ref validate .github/plugin/antidote/skills/antidote
+
       - name: Check SKILL.md size
         run: |
-          lines=$(wc -l < skills/root-cause/SKILL.md)
+          lines=$(wc -l < skills/antidote/SKILL.md)
           if [ "$lines" -gt 500 ]; then
             echo "SKILL.md is $lines lines (max 500)"
             exit 1

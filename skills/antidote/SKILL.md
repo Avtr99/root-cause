@@ -1,14 +1,14 @@
 ---
-name: root-cause
+name: antidote
 description: "Stop AI agents from patching symptoms. Use this skill when coding, reviewing, refactoring, auditing, committing fixes, or adding guards, validation, workarounds, or 20+ lines without deleting code."
 license: MIT
 metadata:
   author: Avtr99
-  source: https://github.com/Avtr99/root-cause
+  source: https://github.com/Avtr99/antidote
   version: "1.1.0"
 ---
 
-# Root Cause
+# Antidote
 
 AI agents often fix symptoms. A bug appears, and the agent adds a check for that one path. The check does not remove the bug. It only hides it on that path. The next path that uses the same data does not have the check. The bug comes back. After many patches, the code holds together with guards that no one remembers.
 

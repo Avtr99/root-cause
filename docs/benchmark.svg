@@ -17,7 +17,7 @@
 
   <!-- Title -->
   <text x="60" y="36" class="title">Structural-fix pass rate by model</text>
-  <text x="60" y="54" class="subtitle">Share of runs that passed the structural-fix oracle. With vs without the root-cause skill.</text>
+  <text x="60" y="54" class="subtitle">Share of runs that passed the structural-fix oracle. With vs without the antidote skill.</text>
 
   <!-- Legend -->
   <rect x="610" y="30" width="14" height="14" rx="2" fill="#2f81f7"/>

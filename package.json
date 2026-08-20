@@ -1,0 +1,23 @@
+{
+  "name": "antidote",
+  "version": "1.1.0",
+  "description": "Stop AI agents from patching symptoms. Forces structural root-cause fixes over symptom patching in any language or stack.",
+  "type": "module",
+  "main": ".opencode/plugins/antidote.js",
+  "keywords": [
+    "antidote",
+    "root-cause",
+    "code-quality",
+    "refactoring",
+    "agent-skills",
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./.pi/extensions/antidote.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  }
+}

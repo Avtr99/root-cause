@@ -1,6 +1,6 @@
 ---
 name: Skill improvement
-about: Suggest a change to the root-cause skill prompt
+about: Suggest a change to the antidote skill prompt
 title: "[skill] "
 labels: enhancement
 ---

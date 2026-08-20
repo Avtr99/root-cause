@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a case where root-cause didn't prevent a patch
+about: Report a case where antidote didn't prevent a patch
 title: "[bug] "
 labels: bug
 ---
