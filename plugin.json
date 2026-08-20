@@ -1,7 +1,7 @@
 {
   "name": "root-cause",
-  "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
   "version": "1.0.0",
+  "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
   "author": {
     "name": "Avtr99",
     "url": "https://github.com/Avtr99"

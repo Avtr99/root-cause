@@ -14,13 +14,20 @@ The skill prompt and its rules live in [`skills/root-cause/SKILL.md`](./skills/r
 
 The skill was tested with the [skill-eval-harness](https://github.com/adewale/skill-eval-harness) across five models. Each test gives the model bugged code and asks it to fix the root cause; a script oracle compiles and runs the output to check that the fix is structural, not a patch. Four cases, 2 runs per arm. Pass rate = share of runs that passed the oracle.
 
-| Model | Pass rate with skill | Pass rate without skill | Improvement |
+![Benchmark results: structural-fix pass rate by model, with vs without the root-cause skill](./docs/benchmark.svg)
+
+<details>
+<summary>Raw numbers</summary>
+
+| Model | With skill | Without skill | Improvement |
 |---|---|---|---|
 | Claude Sonnet 5 | 56% | 0% | **+56 points** |
 | GLM 5.2 | 56% | 0% | **+56 points** |
 | moonshotai/kimi-k3 | 50% | 0% | **+50 points** |
 | Claude Haiku 4.5 | 50% | 31% | **+19 points** |
 | tencent/hy3 | 44% | 0% | **+44 points** |
+
+</details>
 
 Four of the five models passed zero runs without the skill — they patch symptoms by default. With the skill, they find the structural fix instead. Full methodology and reproduction commands: [`docs/benchmark.md`](./docs/benchmark.md).
 
@@ -67,6 +74,22 @@ copilot plugin marketplace add Avtr99/root-cause
 copilot plugin install root-cause@avtr-root-cause
 ```
 
+### Cursor
+
+```bash
+cursor plugin install Avtr99/root-cause
+```
+
+Or search for "root-cause" in the Cursor plugin marketplace.
+
+### Devin
+
+```bash
+devin plugins install Avtr99/root-cause
+```
+
+Verify with `devin plugins list`. Plugins load at session start, so start a new Devin session after installing.
+
 ### Manual
 
 Copy [`skills/root-cause/`](./skills/root-cause/) into the skills directory of your agent:
@@ -76,7 +99,6 @@ Copy [`skills/root-cause/`](./skills/root-cause/) into the skills directory of y
 | Claude Code | `.claude/skills/root-cause/` |
 | Codex | `.agents/skills/root-cause/` |
 | Cursor | `.cursor/skills/root-cause/` |
-| Windsurf | `.windsurf/skills/root-cause/` |
 | Devin | `.devin/skills/root-cause/` |
 | Generic / cross-agent | `.agents/skills/root-cause/` |
 
@@ -86,7 +108,7 @@ Copy [`skills/root-cause/`](./skills/root-cause/) into the skills directory of y
 
 The skill activates on its own when the agent writes or reviews code. You can also invoke it by name:
 
-- **Slash command** (Claude Code, Codex, Cursor, Windsurf): `/root-cause`
+- **Slash command** (Claude Code, Codex, Cursor, Devin): `/root-cause`
 - **Natural language:** "use root-cause", "audit for overcomplication", "find the root cause"
 
 It has two modes — **fix** (one bug) and **audit** (a whole codebase) — described in [`SKILL.md`](./skills/root-cause/SKILL.md).
@@ -97,11 +119,14 @@ It has two modes — **fix** (one bug) and **audit** (a whole codebase) — desc
 |---|---|
 | [`skills/root-cause/SKILL.md`](./skills/root-cause/SKILL.md) | The skill — the prompt that the agent reads |
 | [`skills/root-cause/README.md`](./skills/root-cause/README.md) | Human-facing docs for the skill |
+| [`plugin.json`](./plugin.json) | Root plugin manifest (Devin, Antigravity, and other root-native agents) |
 | [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json) | Claude Code plugin marketplace manifest |
 | [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json) | Claude Code plugin manifest |
 | [`.codex-plugin/plugin.json`](./.codex-plugin/plugin.json) | Codex / ChatGPT plugin manifest |
 | [`.agents/plugins/marketplace.json`](./.agents/plugins/marketplace.json) | Codex / ChatGPT plugin marketplace manifest |
 | [`.github/plugin/marketplace.json`](./.github/plugin/marketplace.json) | GitHub Copilot CLI plugin marketplace manifest |
+| [`.cursor-plugin/plugin.json`](./.cursor-plugin/plugin.json) | Cursor plugin manifest |
+| [`.devin-plugin/plugin.json`](./.devin-plugin/plugin.json) | Devin plugin manifest |
 | [`docs/agent-portability.md`](./docs/agent-portability.md) | Which adapter each host uses |
 | [`docs/benchmark.md`](./docs/benchmark.md) | Evaluation methodology and results |
 

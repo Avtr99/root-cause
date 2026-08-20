@@ -6,7 +6,9 @@
   },
   "metadata": {
     "description": "Root-cause fixes over symptom patching for AI-generated code",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "homepage": "https://github.com/Avtr99/root-cause",
+    "repository": "https://github.com/Avtr99/root-cause"
   },
   "plugins": [
     {

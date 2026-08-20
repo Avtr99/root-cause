@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-rendering="geometricPrecision">
+  <style>
+    .title { font-size: 18px; font-weight: 700; fill: #1f2328; }
+    .subtitle { font-size: 12px; fill: #57606a; }
+    .axis-label { font-size: 11px; fill: #57606a; }
+    .model-label { font-size: 12px; fill: #1f2328; font-weight: 600; }
+    .value-label { font-size: 11px; font-weight: 600; }
+    .legend-text { font-size: 12px; fill: #1f2328; }
+    .gridline { stroke: #d1d9e0; stroke-width: 1; stroke-dasharray: 2 3; }
+    .axis { stroke: #8c959f; stroke-width: 1; }
+    .logo { fill: #57606a; }
+    .badge-text { font-size: 9px; font-weight: 700; fill: #fff; }
+  </style>
+
+  <!-- Card background -->
+  <rect x="0" y="0" width="880" height="420" rx="8" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="60" y="36" class="title">Structural-fix pass rate by model</text>
+  <text x="60" y="54" class="subtitle">Share of runs that passed the structural-fix oracle. With vs without the root-cause skill.</text>
+
+  <!-- Legend -->
+  <rect x="610" y="30" width="14" height="14" rx="2" fill="#2f81f7"/>
+  <text x="630" y="42" class="legend-text">With skill</text>
+  <rect x="720" y="30" width="14" height="14" rx="2" fill="#d0d7de"/>
+  <text x="740" y="42" class="legend-text">Without skill</text>
+
+  <!-- Plot area: x 80..820, y 90..340 -->
+  <!-- Y axis gridlines and labels (0, 20, 40, 60) -->
+  <g>
+    <line x1="80" y1="340" x2="820" y2="340" class="axis"/>
+    <line x1="80" y1="257" x2="820" y2="257" class="gridline"/>
+    <line x1="80" y1="173" x2="820" y2="173" class="gridline"/>
+    <line x1="80" y1="90"  x2="820" y2="90"  class="gridline"/>
+    <text x="72" y="344" text-anchor="end" class="axis-label">0%</text>
+    <text x="72" y="261" text-anchor="end" class="axis-label">20%</text>
+    <text x="72" y="177" text-anchor="end" class="axis-label">40%</text>
+    <text x="72" y="94"  text-anchor="end" class="axis-label">60%</text>
+  </g>
+
+  <!-- Group 1: Claude Sonnet 5 (56%, 0%) — Anthropic logo -->
+  <g>
+    <rect x="108" y="107"  width="56" height="233" rx="3" fill="#2f81f7"/>
+    <rect x="172" y="340"  width="56" height="0"  rx="3" fill="#d0d7de"/>
+    <text x="136" y="100" text-anchor="middle" class="value-label" fill="#2f81f7">56%</text>
+    <text x="200" y="334" text-anchor="middle" class="value-label" fill="#8c959f">0%</text>
+    <g transform="translate(168, 362)">
+      <path class="logo" transform="translate(-34,-11) scale(0.583)" d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/>
+      <text x="-16" y="0" text-anchor="start" class="model-label">Sonnet 5</text>
+    </g>
+  </g>
+
+  <!-- Group 2: GLM 5.2 (56%, 0%) — Zhipu AI text badge -->
+  <g>
+    <rect x="256" y="107"  width="56" height="233" rx="3" fill="#2f81f7"/>
+    <rect x="320" y="340"  width="56" height="0"  rx="3" fill="#d0d7de"/>
+    <text x="284" y="100" text-anchor="middle" class="value-label" fill="#2f81f7">56%</text>
+    <text x="348" y="334" text-anchor="middle" class="value-label" fill="#8c959f">0%</text>
+    <g transform="translate(316, 362)">
+      <circle cx="-26" cy="-4" r="9" fill="#57606a"/>
+      <text x="-26" y="-1" text-anchor="middle" class="badge-text">Z</text>
+      <text x="-13" y="0" text-anchor="start" class="model-label">GLM 5.2</text>
+    </g>
+  </g>
+
+  <!-- Group 3: kimi-k3 (50%, 0%) — Kimi logo -->
+  <g>
+    <rect x="404" y="132"  width="56" height="208" rx="3" fill="#2f81f7"/>
+    <rect x="468" y="340"  width="56" height="0"  rx="3" fill="#d0d7de"/>
+    <text x="432" y="125" text-anchor="middle" class="value-label" fill="#2f81f7">50%</text>
+    <text x="496" y="334" text-anchor="middle" class="value-label" fill="#8c959f">0%</text>
+    <g transform="translate(464, 362)">
+      <path class="logo" transform="translate(-34,-11) scale(0.583)" d="M21.765.351C22.998.351 24 1.353 24 2.586S22.998 4.82 21.765 4.82h-1.974c-.15 0-.26-.12-.26-.26V2.586A2.237 2.237 0 0 1 21.765.35M9.41 13.388l8.447-8.377c.16-.16.07-.471-.14-.471h-4.55s-.1.02-.14.06l-9.099 9.029c-.14.14-.35.02-.35-.21V4.81c0-.15-.1-.27-.221-.27H.22c-.12 0-.22.12-.22.27v18.57c0 .15.1.27.22.27h3.137c.12 0 .22-.12.22-.27v-3.79c0-.08.03-.16.08-.21l2.826-2.796c.07-.07.16-.08.241-.03l7.546 5.551a8.9 8.9 0 0 0 4.018 1.493c.12.01.23-.11.23-.27V19.76c0-.14-.08-.25-.19-.26a5.8 5.8 0 0 1-2.355-.942l-6.533-4.73c-.14-.09-.15-.32-.03-.441"/>
+      <text x="-16" y="0" text-anchor="start" class="model-label">kimi-k3</text>
+    </g>
+  </g>
+
+  <!-- Group 4: Claude Haiku 4.5 (50%, 31%) — Anthropic logo -->
+  <g>
+    <rect x="552" y="132"  width="56" height="208" rx="3" fill="#2f81f7"/>
+    <rect x="616" y="211"  width="56" height="129" rx="3" fill="#d0d7de"/>
+    <text x="580" y="125" text-anchor="middle" class="value-label" fill="#2f81f7">50%</text>
+    <text x="644" y="204" text-anchor="middle" class="value-label" fill="#57606a">31%</text>
+    <g transform="translate(612, 362)">
+      <path class="logo" transform="translate(-36,-11) scale(0.583)" d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/>
+      <text x="-18" y="0" text-anchor="start" class="model-label">Haiku 4.5</text>
+    </g>
+  </g>
+
+  <!-- Group 5: hy3 (44%, 0%) — Tencent text badge -->
+  <g>
+    <rect x="700" y="157"  width="56" height="183" rx="3" fill="#2f81f7"/>
+    <rect x="764" y="340"  width="56" height="0"  rx="3" fill="#d0d7de"/>
+    <text x="728" y="150" text-anchor="middle" class="value-label" fill="#2f81f7">44%</text>
+    <text x="792" y="334" text-anchor="middle" class="value-label" fill="#8c959f">0%</text>
+    <g transform="translate(760, 362)">
+      <circle cx="-18" cy="-4" r="9" fill="#57606a"/>
+      <text x="-18" y="-1" text-anchor="middle" class="badge-text">T</text>
+      <text x="-5" y="0" text-anchor="start" class="model-label">hy3</text>
+    </g>
+  </g>
+
+  <!-- Y axis title -->
+  <text x="28" y="215" text-anchor="middle" class="axis-label" transform="rotate(-90 28 215)">Pass rate</text>
+</svg>

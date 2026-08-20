@@ -8,8 +8,11 @@ on:
       - 'skills/**'
       - '.claude-plugin/**'
       - '.codex-plugin/**'
+      - '.cursor-plugin/**'
+      - '.devin-plugin/**'
       - '.agents/**'
       - '.github/plugin/**'
+      - 'plugin.json'
       - '.github/workflows/validate.yml'
   pull_request:
     branches: [main]
@@ -37,9 +40,12 @@ jobs:
         run: |
           set -e
           for f in \
+            plugin.json \
             .claude-plugin/marketplace.json \
             .claude-plugin/plugin.json \
             .codex-plugin/plugin.json \
+            .cursor-plugin/plugin.json \
+            .devin-plugin/plugin.json \
             .agents/plugins/marketplace.json \
             .github/plugin/marketplace.json; do
             echo "Checking $f"
