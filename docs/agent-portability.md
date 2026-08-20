@@ -6,7 +6,7 @@
 
 | Host | Files | Notes |
 |------|-------|-------|
-| **Universal (75+ agents)** | `skills/root-cause/SKILL.md` | `npx skills add Avtr99/root-cause` auto-detects every supported agent and installs into its native skills dir. No manifest required. |
+| **Universal** | `skills/root-cause/SKILL.md` | `npx skills add Avtr99/root-cause` auto-detects supported agents and installs into each one's native skills dir. No manifest required. |
 | **Claude Code** | `.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json` | Full plugin install via `claude plugin marketplace add Avtr99/root-cause`, then `claude plugin install root-cause@avtr-root-cause`. |
 | **Codex / ChatGPT** | `.codex-plugin/plugin.json`, `.agents/plugins/marketplace.json` | Plugin install via `codex plugin marketplace add Avtr99/root-cause`, then `codex plugin install root-cause@avtr-root-cause`. |
 | **GitHub Copilot CLI** | `.github/plugin/marketplace.json` | `copilot plugin marketplace add Avtr99/root-cause`, then `copilot plugin install root-cause@avtr-root-cause`. |

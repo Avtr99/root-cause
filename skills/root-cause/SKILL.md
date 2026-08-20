@@ -2,6 +2,10 @@
 name: root-cause
 description: "Stop AI agents from patching symptoms. Use this skill when coding, reviewing, refactoring, auditing, committing fixes, or adding guards, validation, workarounds, or 20+ lines without deleting code."
 license: MIT
+metadata:
+  author: Avtr99
+  source: https://github.com/Avtr99/root-cause
+  version: "1.1.0"
 ---
 
 # Root Cause

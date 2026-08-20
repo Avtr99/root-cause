@@ -37,13 +37,13 @@ Four of the five models passed zero runs without the skill — they patch sympto
 
 This skill follows the open [Agent Skills](https://agentskills.io) standard. It works in Claude Code, Codex, Cursor, Devin, Cline, GitHub Copilot, and other popular AI coding platforms.
 
-### Universal — 75+ agents (recommended)
+### Universal (recommended)
 
 ```bash
 npx skills add Avtr99/root-cause
 ```
 
-This command detects every supported agent on your machine and installs the skill into each agent's native skills directory.
+This command detects supported agents on your machine and installs the skill into each agent's native skills directory.
 
 ```bash
 npx skills add Avtr99/root-cause --global          # all projects, not just this one
@@ -79,8 +79,6 @@ copilot plugin install root-cause@avtr-root-cause
 ```bash
 cursor plugin install Avtr99/root-cause
 ```
-
-Or search for "root-cause" in the Cursor plugin marketplace.
 
 ### Devin
 

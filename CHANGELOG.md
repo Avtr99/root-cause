@@ -2,6 +2,24 @@
 
 All notable changes to `root-cause` are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-08-20
+
+### Added
+- `.cursor-plugin/plugin.json` — native Cursor plugin install support.
+- `.devin-plugin/plugin.json` — native Devin plugin install support.
+- `.grok-plugin/plugin.json` and `.grok-plugin/marketplace.json` — native Grok Build plugin install support.
+- `plugin.json` (repo root) — canonical plugin manifest for Antigravity, Qwen Code, Factory Droid, and other root-native agents.
+- `repository` field added to all adapter manifests.
+- `metadata` block (author, source, version) added to `SKILL.md` frontmatter per the Agent Skills spec.
+- `docs/benchmark.svg` — visual benchmark chart with model logos and grouped bar comparison.
+- Cursor, Devin, and Grok Build install sections in README.
+- Cursor, Devin, and Grok Build entries in `docs/agent-portability.md`.
+
+### Fixed
+- Claude Code skill discovery: marketplace `source` changed from `./skills/root-cause` to `./` so Claude Code finds `skills/root-cause/SKILL.md` via the standard `skills/` convention. Previously the plugin installed but exposed no skills.
+- Removed fabricated "75+ agents" claim from README and docs.
+- Removed false "search for root-cause in the Cursor plugin marketplace" claim (not published there).
+
 ## [1.0.0] - 2026-08-18
 
 ### Added

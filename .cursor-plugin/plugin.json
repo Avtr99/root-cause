@@ -1,7 +1,7 @@
 {
   "name": "root-cause",
   "displayName": "Root Cause",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Catch and fix AI-written patchwork code before it ships. Forces structural root-cause fixes over symptom patching in any language or stack.",
   "author": {
     "name": "Avtr99",
